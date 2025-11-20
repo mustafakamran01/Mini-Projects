@@ -1,51 +1,47 @@
-document.querySelector('#calculate').addEventListener('click', (e) => {
+function temperatureConversion() {
+    const inputField = document.querySelector('#input')
+    const outputField = document.querySelector('#result')
 
-    const celsiusTemperature = document.querySelector('#celsius')
-    const fahrenheitTemperature = document.querySelector('#fahrenheit')
-    const kelvinTemperature = document.querySelector('#kelvin')
-
-    const celsiusInput = celsiusTemperature.value
-    const fahrenheitInput = fahrenheitTemperature.value
-    const kelvinInput = kelvinTemperature.value
+    const inputOption = document.querySelector('#inputOption')
+    const outputOption = document.querySelector('#outputOption')
 
 
-    if (celsiusInput !== "") {
-        let fTemperature = 33.8 * Number(celsiusInput)
-        let kTemperature = 274.15 * Number(celsiusInput)
+    let input = Number(inputField.value)
+    let inputSelect = inputOption.value
+    
 
-        fahrenheitTemperature.value = fTemperature
-        kelvinTemperature.value = kTemperature
+    let outputSelect = outputOption.value
+    let output = 0;
 
-    } else if (fahrenheitInput !== "") {
-        let cTemperature = Number(fahrenheitInput) * (-17.222)
-        let kTemperature = Number(fahrenheitInput) * 255.928
-
-        celsiusTemperature.value = cTemperature
-        kelvinTemperature.value = kTemperature
-
-    } else if (kelvinInput != 0) {
-        let cTemperature = Number(kelvinInput) * (-272.15)
-        let fTemperature = Number(kelvinInput) * (-457.87)
-
-        celsiusTemperature.value = cTemperature
-        fahrenheitTemperature.value=fTemperature
+    if (inputSelect == "Celsius") {
+        if (outputSelect == "Fahrenheit") {
+            output = (input * (9/5)) + 32
+        } else if (outputSelect == "Kelvin") {
+            output = input + 273.15
+        } else {
+            output = input
+        }
+    } else if (inputSelect == "Fahrenheit") {
+        if (outputSelect == "Celsius") {
+            output = (input - 32) * (5/9 )
+        } else if (outputSelect == "Kelvin") {
+            output = (input - 32) * (5/9) + 273.15
+        } else {
+            output = input
+        }
+    } else if (inputSelect == "Kelvin") {
+        if (outputSelect == "Celsius") {
+            output = input - 273.15
+        } else if (outputSelect == "Fahrenheit") {
+            output = (input - 273.15) * (9/5) + 32
+        } else {
+            output = input
+        }
     }
 
-    console.log(celsiusTemperature);
-    console.log(typeof(celsiusTemperature));
-    
-    
-    
+    outputField.value = output
+}
 
-})
-
-
-
-// 1celsiusTemperature = 33.8fahrenheitTemperature
-// 1celsiusTemperature = 274.15kelvinTemperature
-
-// 1fahrenheitTemperature = -17.222celsiusTemperature
-// 1fahrenheitTemperature = 255.928kelvinTemperature
-
-// 1kelvinTemperature = -272.15celsiusTemperature
-// 1kelvinTemperature = -457.87kelvinTemperature
+document.querySelector('#input').addEventListener('input', temperatureConversion)
+document.querySelector('#inputOption').addEventListener('change', temperatureConversion)
+document.querySelector('#outputOption').addEventListener('change', temperatureConversion)
