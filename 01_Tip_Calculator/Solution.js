@@ -11,6 +11,6 @@ document.querySelector('#calculate').addEventListener('click', (e) => {
     const tipAmount = (billAmount * tipPercent)/100
     const totalAmount = billAmount + tipAmount
 
-    result.innerHTML = `Total: ${totalAmount}`
+    result.innerHTML = `Total Amount: $${totalAmount}`
 
 })
