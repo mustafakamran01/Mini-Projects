@@ -1,7 +1,5 @@
 const mainDiv = document.querySelector('#main')
 
-let flag = true;
-
 document.querySelector('#calculate').addEventListener('click', (e) => {
 
     const billAmount = Number(document.querySelector('#amount').value)
