@@ -32,5 +32,3 @@ const ref = setInterval( () => {
     clearInterval(ref)
     }
 }, 2000)
-
-
