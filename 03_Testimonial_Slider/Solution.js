@@ -33,24 +33,24 @@
 //     }
 // }, 2000)
 
-const innerDiv = document.querySelector('#inner')
+// const innerDiv = document.querySelector('#inner')
 
-const para1 = document.querySelector('#one').innerHTML
-const para2 = document.querySelector('#two').innerHTML
-const para3 = document.querySelector('#three').innerHTML
-const para4 = document.querySelector('#four').innerHTML
+// const para1 = document.querySelector('#one').innerHTML
+// const para2 = document.querySelector('#two').innerHTML
+// const para3 = document.querySelector('#three').innerHTML
+// const para4 = document.querySelector('#four').innerHTML
 
-const arr = Array.of(para1, para2, para3, para4)
+// const arr = Array.of(para1, para2, para3, para4)
 
-let i = 0;
+// let i = 0;
 
-const ref = setInterval( () => {
-    innerDiv.innerHTML = arr[i];
-    console.log(arr[i]);
-    i++;
+// const ref = setInterval( () => {
+//     innerDiv.innerHTML = arr[i];
+//     console.log(arr[i]);
+//     i++;
 
-    if (i >= arr.length) {
-    // clearInterval(ref)
-    i = 0
-    }
-}, 2000)
+//     if (i >= arr.length) {
+//     // clearInterval(ref)
+//     i = 0
+//     }
+// }, 2000)
