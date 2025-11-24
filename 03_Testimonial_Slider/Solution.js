@@ -83,6 +83,8 @@ const name = document.querySelector('#name')
 
 let i = 0;
 
+testimonial();
+
 function testimonial() {
     
     img.src = list_of_content[i].imgUrl
@@ -90,6 +92,10 @@ function testimonial() {
     name.textContent = list_of_content[i].userName
 
     i++
+
+    // if (i == list_of_content.length) {
+    //     i = 0
+    // }
 }
 
 setInterval( () => {
