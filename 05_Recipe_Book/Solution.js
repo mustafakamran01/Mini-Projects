@@ -4,15 +4,18 @@ async function retriveRecipe() {
     const response = await fetch('https://api.spoonacular.com/recipes/random?number=10&apiKey=275d58779ccf4e22af03e792e8819fff');
     const data = await response.json();
 
-    return data.recipes;
+    // return data.recipes;
+    recipe(data.recipes)
 }
 
-async function starter() {
-    const retrivedRecipe = await retriveRecipe()
-    recipe(retrivedRecipe)
-}
+// async function starter() {
+//     const retrivedRecipe = await retriveRecipe()
+//     recipe(retrivedRecipe)
+// }
 
-starter();
+// starter();
+
+retriveRecipe();
 
 function recipe(retrivedRecipe) {
     retrivedRecipe.map( (element) => {
