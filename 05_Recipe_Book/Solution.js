@@ -4,8 +4,15 @@ async function retriveRecipe() {
     const response = await fetch('https://api.spoonacular.com/recipes/random?number=10&apiKey=275d58779ccf4e22af03e792e8819fff');
     const data = await response.json();
 
-    recipe(data.recipes);
+    return data.recipes;
 }
+
+async function starter() {
+    const retrivedRecipe = await retriveRecipe()
+    recipe(retrivedRecipe)
+}
+
+starter();
 
 function recipe(retrivedRecipe) {
     retrivedRecipe.map( (element) => {
@@ -18,10 +25,19 @@ function recipe(retrivedRecipe) {
         const myH2 = document.createElement('h2')
         myH2.innerHTML = element.title
 
-        element.extendedIngredients.map( (ing) => {
-            const myPara = document.createElement('p')
-            myPara.textContent = ing.original.join(",")
-        })
+        const myPara = document.createElement('p')
+        myPara.innerHTML = `<strong>Ingredients: </strong> ${element.extendedIngredients.map( (ingredients) => {
+            ingredients.original}).join(",")}`
+
+        const link = document.createElement('a')
+        link.href= element.sourceUrl
+
+        myLI.appendChild(myImg)
+        myLI.appendChild(myH2)
+        myLI.appendChild(myPara)
+        myLI.appendChild(link)
+
+        recipeList.appendChild(myLI)
 
     })
 
