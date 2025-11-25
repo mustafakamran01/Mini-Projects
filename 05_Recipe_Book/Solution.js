@@ -8,8 +8,23 @@ async function retriveRecipe() {
 }
 
 function recipe(retrivedRecipe) {
-    const createdLI = document.createElement('li')
-    
+    retrivedRecipe.map( (element) => {
+        const myLI = document.createElement('li')
+
+        const myImg = document.createElement('img')
+        myImg.src = element.image
+        myImg.alt = "View Image"
+
+        const myH2 = document.createElement('h2')
+        myH2.innerHTML = element.title
+
+        element.extendedIngredients.map( (ing) => {
+            const myPara = document.createElement('p')
+            myPara.textContent = ing.original.join(",")
+        })
+
+    })
+
 }
 
 
