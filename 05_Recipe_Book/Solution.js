@@ -17,6 +17,7 @@ starter();
 function recipe(retrivedRecipe) {
     retrivedRecipe.map( (element) => {
         const myLI = document.createElement('li')
+        myLI.className = "recipe-item"
 
         const myImg = document.createElement('img')
         myImg.src = element.image
@@ -26,11 +27,12 @@ function recipe(retrivedRecipe) {
         myH2.innerHTML = element.title
 
         const myPara = document.createElement('p')
-        myPara.innerHTML = `<strong>Ingredients: </strong> ${element.extendedIngredients.map( (ingredients) => {
-            ingredients.original}).join(",")}`
+        myPara.innerHTML = `<strong>Ingredients: </strong> ${element.extendedIngredients.map( (ingredients) => 
+            ingredients.original).join(",")}`
 
         const link = document.createElement('a')
         link.href= element.sourceUrl
+        link.innerText = "View Recipe"
 
         myLI.appendChild(myImg)
         myLI.appendChild(myH2)

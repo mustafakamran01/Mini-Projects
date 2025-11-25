@@ -17,13 +17,13 @@ h1 {
   font-size: 36px;
 }
 
-.container {
+#main {
   margin: 0 auto;
   max-width: 1200px;
   padding: 20px;
 }
 
-.recipe-list {
+#recipeList {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -74,7 +74,7 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  .container {
+  .main {
     max-width: 90%;
   }
   .recipe-item {
