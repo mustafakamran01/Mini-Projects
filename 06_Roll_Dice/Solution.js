@@ -1,9 +1,16 @@
 const button = document.querySelector('#roll-button')
 const history = document.querySelector('#roll-history')
+const dice = document.querySelector('#dice')
 
 let i = 1
 
 button.addEventListener('click', (e) => {
+    dice.classList.add("roll-animation");
+
+     setTimeout(() => {
+        dice.classList.remove("roll-animation");
+        // displayDice();
+    }, 1000);
 
     const randomNumber = Math.floor(Math.random() * 6 + 1)
     console.log(randomNumber);
@@ -17,6 +24,7 @@ function displayDice(randomNumber) {
 
     switch (userChoice) {
         case 1:
+            dice.innerHTML = `&#9856`
             const myLi1 = document.createElement('li')            
             const mySpan1 = document.createElement('span')
             myLi1.appendChild(document.createTextNode(`Roll ${i}`))
@@ -27,6 +35,7 @@ function displayDice(randomNumber) {
             break;
 
         case 2:
+            dice.innerHTML = `&#9857`
             const myLi2 = document.createElement('li')            
             const mySpan2 = document.createElement('span')
             myLi2.appendChild(document.createTextNode(`Roll ${i}`))
@@ -37,6 +46,7 @@ function displayDice(randomNumber) {
             break;
 
         case 3:
+            dice.innerHTML = `&#9858`
             const myLi3 = document.createElement('li')            
             const mySpan3 = document.createElement('span')
             myLi3.appendChild(document.createTextNode(`Roll ${i}`))
@@ -47,6 +57,7 @@ function displayDice(randomNumber) {
             break;
 
         case 4:
+            dice.innerHTML = `&#9859`
             const myLi4 = document.createElement('li')            
             const mySpan4 = document.createElement('span')
             myLi4.appendChild(document.createTextNode(`Roll ${i}`))
@@ -57,6 +68,7 @@ function displayDice(randomNumber) {
             break;
 
         case 5:
+            dice.innerHTML = `&#9860`
             const myLi5 = document.createElement('li')            
             const mySpan5 = document.createElement('span')
             myLi5.appendChild(document.createTextNode(`Roll ${i}`))
@@ -67,6 +79,7 @@ function displayDice(randomNumber) {
             break;
 
         case 6:
+            dice.innerHTML = `&#9861`
             const myLi6 = document.createElement('li')            
             const mySpan6 = document.createElement('span')
             myLi6.appendChild(document.createTextNode(`Roll ${i}`))
