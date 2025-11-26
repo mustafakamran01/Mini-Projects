@@ -22,7 +22,6 @@ start.addEventListener('click', (e) => {
             seconds--;
         }
         
-
         let mm = String(minutes).padStart(2, 0)
         let ss = String(seconds).padStart(2, 0)
 
@@ -30,9 +29,6 @@ start.addEventListener('click', (e) => {
         }, 1000)
     }
 })
-
-console.log("Kamran");
-
 
 stop.addEventListener('click', (e) => {
     clearInterval(interval)
@@ -45,5 +41,4 @@ reset.addEventListener('click', (e) => {
     timer.innerHTML = "25:00"
     minutes = 25
     seconds = 0
-
 })
