@@ -7,10 +7,6 @@ button.addEventListener('click', (e) => {
 
     const randomNumber = Math.floor(Math.random() * 6 + 1)
 
-    // console.log(randomNumber);
-
-    
-
     const myDiv = document.createElement('li')
     myDiv.innerHTML = `Roll ${i} : ${randomNumber}`
     i++;
