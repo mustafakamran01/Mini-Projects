@@ -1,12 +1,16 @@
+// Accessing paragraph to show the timer
 const timer = document.querySelector('#timer')
 
+// Accessing all the buttons
 const start = document.querySelector('#start')
 const stop = document.querySelector('#stop')
 const reset = document.querySelector('#reset')
 
+// Converting timer string to number and spliting on the basis of ':'
 let [minutes, seconds] = timer.textContent.split(':').map(Number)
 let interval = null;
 
+// Adding eventListener to the start button to start the timer
 start.addEventListener('click', (e) => {
     if (interval == null) {
 
@@ -30,11 +34,13 @@ start.addEventListener('click', (e) => {
     }
 })
 
+// Adding eventListener to the stop button to stop the timer
 stop.addEventListener('click', (e) => {
     clearInterval(interval)
     interval = null
 })
 
+// Adding eventListener to reset button to reset all the times and paragraph 
 reset.addEventListener('click', (e) => {
     clearInterval(interval)
     interval = null;
