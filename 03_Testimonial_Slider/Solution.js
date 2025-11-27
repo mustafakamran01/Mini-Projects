@@ -1,3 +1,4 @@
+// Creating an array of content containing imageURL, text and userName
 const list_of_content = [
     {
         imgUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80',
@@ -18,15 +19,17 @@ const list_of_content = [
     }
 ]
 
-
+// Accessing all the fields (image, paragraph, h2)
 const img = document.querySelector('#img')
 const content = document.querySelector('#content')
 const name = document.querySelector('#name')
 
 let i = 0;
 
+// Calling function to display contents
 testimonial();
 
+// Creating function to display the content
 function testimonial() {
     
     img.src = list_of_content[i].imgUrl
@@ -40,6 +43,7 @@ function testimonial() {
     }
 }
 
+// Setting interval to display content in every 3 seconds
 setInterval( () => {
     testimonial();
 }, 3000)
