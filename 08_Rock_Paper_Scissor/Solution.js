@@ -1,21 +1,24 @@
+// Accessing buttons div
 const buttons = document.querySelector('.buttons')
 
+// Accessing paragraph to display result
 const result = document.querySelector('#result')
 
+// Accessing user and computer score
 const userScore = document.querySelector('#user-score')
 const computerScore = document.querySelector('#computer-score')
 
 let userScoreNumber = 0;
 let computerScoreNumber = 0;
 
-
+// Adding eventListener to buttons div 
 buttons.addEventListener( 'click', (e) => {
 
     let computerChoice = Math.floor((Math.random() * 3) + 1)
     let id = e.target.id
 
     switch (computerChoice) {
-        
+
         // 1 -> rock
         case 1:
 
