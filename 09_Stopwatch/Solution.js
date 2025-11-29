@@ -1,10 +1,15 @@
-
+// Accessing timer paragraph
 const timer = document.querySelector("#timer");
+
+// Accesing div of buttons
 const buttons = document.querySelector("#buttons");
 
+// Spliting initial time on basis of ':'
 let [hours, minutes, seconds] = timer.textContent.split(":").map(Number);
+
 let interval = null
 
+// Adding eventListener to div buttons
 buttons.addEventListener("click", (e) => {
     let id = e.target.id;
 
@@ -42,11 +47,13 @@ buttons.addEventListener("click", (e) => {
                 break;
 
             case "stop":
+
                 clearInterval(interval)
                 interval = null
                 break;
 
             case "reset":
+                
                 clearInterval(interval)
                 hours = 0
                 minutes = 0
@@ -54,7 +61,4 @@ buttons.addEventListener("click", (e) => {
                 timer.innerHTML = "00:00:00"
                 break;
         }
-
-    
-
 });
