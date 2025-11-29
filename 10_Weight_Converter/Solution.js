@@ -21,16 +21,3 @@ userInput.addEventListener('input', (e) => {
         result.innerHTML = weightInKg
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-// divide the mass value by 2.205
