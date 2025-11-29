@@ -1,11 +1,15 @@
+// Accessing inputField, resultField and errorField
 const userInput = document.querySelector('#input')
 const result = document.querySelector('#result')
 const error = document.querySelector('#error')
 
+// Adding eventListener to the inputField
 userInput.addEventListener('input', (e) => {
 
+    // Extracting value from the inputField
     const userInputValue = userInput.value
 
+    // If weight is in -ve or zero, print error, otherwise calculate the weight
     if (userInputValue <= 0) {
         error.innerHTML = "Please enter a valid number"
         setTimeout( () => {
