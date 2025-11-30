@@ -11,6 +11,8 @@ buttons.addEventListener('click', (e) => {
 
     switch (id) {
         case 'button1':
+            let button = document.querySelector('#button1')
+
             if (!tab1.classList.contains('live')) {
 
                 if (tab2.classList.contains('live')) {
@@ -42,7 +44,7 @@ buttons.addEventListener('click', (e) => {
 
         case 'button3':
             if (!tab3.classList.contains('live')) {
-                
+
                 if (tab1.classList.contains('live')) {
                     tab1.classList.remove('live')
                 }
