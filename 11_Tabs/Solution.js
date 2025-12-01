@@ -1,14 +1,18 @@
+// // Accessing div of buttons
 // const buttons = document.querySelector('.btn-container')
 
+// // Accessing all the contents with their id
 // const tab1 = document.querySelector('#step1')
 // const tab2 = document.querySelector('#step2')
 // const tab3 = document.querySelector('#step3')
 
+// // Adding eventListener to the buttons div
 // buttons.addEventListener('click', (e) => {
+
+//     // Getting the id of the target
 //     let id = e.target.id
 
-//     console.log(id);
-
+//     // Depending upon the id, we are displaying the content
 //     switch (id) {
 //         case 'button1':
 //             let button = document.querySelector('#button1')
