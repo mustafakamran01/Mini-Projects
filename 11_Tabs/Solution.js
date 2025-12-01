@@ -62,13 +62,25 @@
 // })
 
 
+/******************  Another approach ******************/
+
+
+// Accessing the main div in which we have buttons and contents
 const tabs = document.querySelector('.tabs')
+
+// Accessing all the buttons together
 const buttons = document.querySelectorAll('.button')
+
+// Accessing all the contents together
 const contents = document.querySelectorAll('.content')
 
+// Adding eventListener to the main div
 tabs.addEventListener('click', (e) => {
+
+    // Getting the data-id of the target
     let id = e.target.dataset.id
 
+    // If the target doesnot have data-id, skip
     if (id) {
 
         buttons.forEach( (btn) => btn.classList.remove('live'));
