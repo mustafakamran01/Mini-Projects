@@ -62,3 +62,23 @@
 // })
 
 
+const tabs = document.querySelector('.tabs')
+const buttons = document.querySelectorAll('.button')
+const contents = document.querySelectorAll('.content')
+
+tabs.addEventListener('click', (e) => {
+    let id = e.target.dataset.id
+
+    if (id) {
+
+        buttons.forEach( (btn) => btn.classList.remove('live'));
+
+        e.target.classList.add('live')
+
+        contents.forEach( (content) => content.classList.remove('live'));
+
+        let element = document.getElementById(id)
+
+        element.classList.add('live')
+    }
+})
