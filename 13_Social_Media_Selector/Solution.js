@@ -1,17 +1,24 @@
 const menu = document.querySelector('.menu')
-const list = document.querySelector('.social-lists')
+const social_list = document.querySelector('.social-lists')
 
 let flag = false
 
 menu.addEventListener('click', (e) => {
     
     if (flag == false) {
-        list.classList.remove('hide')
+        social_list.classList.remove('hide')
         flag = true
     } else {
-        list.classList.add('hide')
+        social_list.classList.add('hide')
         flag = false
     }
+})
 
-    
+
+social_list.addEventListener('click', (e) => {
+
+    menu.innerHTML = e.target.innerHTML
+
+    social_list.classList.add('hide')
+    flag = false
 })
