@@ -1,24 +1,20 @@
 const menu = document.querySelector('.menu')
+const menuPara = document.querySelector('.menu p')
 const social_list = document.querySelector('.social-lists')
-
-let flag = false
+const liEls = document.querySelectorAll('.social-lists li')
 
 menu.addEventListener('click', (e) => {
-    
-    if (flag == false) {
-        social_list.classList.remove('hide')
-        flag = true
-    } else {
-        social_list.classList.add('hide')
-        flag = false
-    }
+
+    social_list.classList.toggle('hide')
+    menu.classList.toggle('rotate')
 })
 
-
-social_list.addEventListener('click', (e) => {
-
-    menu.innerHTML = e.target.innerHTML
-
-    social_list.classList.add('hide')
-    flag = false
+liEls.forEach( (li) => {
+    console.log("List item");
+    li.addEventListener('click', (e) => {
+        console.log("Inner item");
+        menuPara.innerHTML = li.innerHTML
+        menu.classList.toggle('rotate')
+        social_list.classList.add('hide')
+    })
 })
