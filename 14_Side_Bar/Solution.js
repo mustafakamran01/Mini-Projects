@@ -1,11 +1,12 @@
-const icon = document.querySelector('.fa-bars')
+//
+const bars = document.querySelector('.fa-bars')
 const sidebar = document.querySelector('.sidebar')
-const cross = document.querySelector('.fa-times')
+const closeButton = document.querySelector('.fa-times')
 
-icon.addEventListener('click', (e) => {
+bars.addEventListener('click', (e) => {
     sidebar.classList.toggle('show-sidebar')
 })
 
-cross.addEventListener('click', (e) => {
-    
+closeButton.addEventListener('click', (e) => {
+    sidebar.classList.toggle('show-sidebar')
 })
