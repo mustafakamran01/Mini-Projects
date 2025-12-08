@@ -10,19 +10,28 @@ remainingCounter.innerHTML = remainingCounterValue
 
 textArea.addEventListener('keydown', (e) => {
 
-    if (textArea.value == "") {
-
-    } else if (e.key === 'Backspace') {
-        totalCounterValue--;
-        remainingCounterValue++;
-        totalCounter.innerHTML = totalCounterValue
-        remainingCounter.innerHTML = remainingCounterValue
+    if (e.key === 'Backspace') {
+        if (totalCounterValue == 0 && remainingCounterValue == 50) {
+            
+        } else {
+            totalCounterValue--;
+            remainingCounterValue++;
+            totalCounter.innerHTML = totalCounterValue
+            remainingCounter.innerHTML = remainingCounterValue
+        }
 
     } else {
-        totalCounterValue++
-        remainingCounterValue--;
-        totalCounter.innerHTML = totalCounterValue
-        remainingCounter.innerHTML = remainingCounterValue
+        if (totalCounterValue == 0 && remainingCounterValue == 50) {
+            totalCounterValue++
+            remainingCounterValue--;
+            totalCounter.innerHTML = totalCounterValue
+            remainingCounter.innerHTML = remainingCounterValue
+            
+        } else {
+            totalCounterValue++
+            remainingCounterValue--;
+            totalCounter.innerHTML = totalCounterValue
+            remainingCounter.innerHTML = remainingCounterValue
+        }   
     }
-    
 })
