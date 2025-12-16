@@ -8,7 +8,7 @@ let remainingCounterValue = 50
 totalCounter.innerHTML = totalCounterValue
 remainingCounter.innerHTML = remainingCounterValue
 
-textArea.addEventListener('keydown', (e) => {
+textArea.addEventListener('keyup', (e) => {
 
     if (e.key === 'Backspace') {
         if (totalCounterValue == 0 && remainingCounterValue == 50) {
